@@ -1,0 +1,98 @@
+h1{
+    padding-left: 30%;
+
+}
+
+form {
+    width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  form p {
+    margin: 10px 0;
+  }
+  
+  form label {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  
+  form input[type="text"],
+  form input[type="email"],
+  form input[type="tel"],
+  form input[type="password"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  form select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+  }
+
+  label {
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  input[type="checkbox"] {
+    display: none;
+  }
+  
+  input[type="checkbox"] + label:before {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+    vertical-align: middle;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+  }
+  
+  input[type="checkbox"]:checked + label:before {
+    background-color: #2196f3;
+    border-color: #2196f3;
+    color: #fff;
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .left {
+    width: 50%;
+    float: left;
+  }
+  
+  .right {
+    width: 50%;
+    float: right;
+  }
+  
+  img {
+    width: 50%;
+    height: 30%;
+  }
+  
+  
+
+
+  
+  
+  
+  
+  
+  
+  
