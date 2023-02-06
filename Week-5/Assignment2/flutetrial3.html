@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="flute.css">
+
+<button id="button1">Display Image1</button>
+<button id="button2">Display Image2</button>
+<button id="button3">Display Image3</button>
+<div id="imageContainer"></div>
+<img id="image1" src="C:\Users\Family\Downloads\unsamples\image-1.jpg" class="hidden">
+<br>
+<img id="image2" src="C:\Users\Family\Downloads\unsamples\image-2.jpg" class="hidden">
+<br>
+<img id="image3" src="C:\Users\Family\Downloads\unsamples\image-3.jpg" class="hidden">
+<br>
+<script>
+    var button = document.getElementById("button1");
+    var imageContainer = document.getElementById("imageContainer");
+    var image = document.getElementById("image1");
+    var count = 0;
+
+    button.addEventListener("click", function() {
+        if (count === 0) {
+            image.classList.remove("hidden");
+            count++;
+        } else if (count === 1) {
+            var newImage = image.cloneNode();
+            imageContainer.appendChild(newImage);
+            count++;
+        }
+    });
+
+    document.getElementById("button2").addEventListener("click", function() {
+    var imageToDisplay = document.getElementById("image2");
+    imageToDisplay.classList.remove("hidden");
+  });
+
+
+  document.getElementById("button3").addEventListener("click", function() {
+    var imageToDisplay = document.getElementById("image3");
+    imageToDisplay.classList.remove("hidden");
+  });
+
+</script>
+</body>
+</html>

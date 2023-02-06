@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+// Define the callback functions
+function doTask1(start, end) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+        for (let i = start; i <= end; i++) {
+        console.log(i);
+    }
+    console.log("Task 1 completed");
+      resolve();
+    }, 2000);
+  });
+}
+
+function doTask2(start,end) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+        for (let i = start; i <= end; i++) {
+        console.log(i);
+    }
+      console.log("Task 2 completed");
+      resolve();
+    }, 3000);
+  });
+}
+
+function doTask3(start,end) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+        for (let i = start; i <= end; i++) {
+        console.log(i);
+    }
+      console.log("Task 3 completed");
+      resolve();
+    }, 4000);
+  });
+}
+
+// Using async/await
+async function asyncTask() {
+  await doTask1(1,5);
+  await doTask2(6,10);
+  await doTask3(11,15);
+}
+
+asyncTask();
+
+
+
+
+
+
+
+</script>
+    </head>
+</html>

@@ -1,16 +1,21 @@
+const cache = new Map();
 function memoize(fn){
-    const cache = new Map();
+    
     return function (...args){
+        console.log(args);//! [1,2] is output
 
-        const key = args.toString();
+        const key = args.toString();//converted to string 
+        console.log
         console.log(`fn called with ` + key);
         console.log(cache);
         if (cache.has(key)){
             return cache.get(key);
         }
-        cache.set(key, fn(...args));
+        cache.set(key,args[0] + args[1]);
+        
         return cache.get(key);
     };
+    
 
 
 }
@@ -19,6 +24,7 @@ function memoize(fn){
 function add(a,b){
     const add = (a,b) => {
 let sum = a + b;
+return sum;
 console.log(sum);
 }
 }

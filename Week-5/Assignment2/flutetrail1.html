@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="text/javascript" src="flute.js"></script>
+    <link rel="stylesheet" href="flute.css">
+  <title>Document</title>
+</head>
+<body>
+  <button id="button1">Display Image 1</button>
+  <button id="button2">Display Image 2</button>
+  <button id="button3">Display Image 3</button>
+  <button id="button4">Display Image 4</button>
+  <button id="button5">Display Image 5</button>
+  <img id="image1" src="C:\Users\Family\Downloads\unsamples\image-1.jpg" class="hidden">
+  <img id="image2" src="C:\Users\Family\Downloads\unsamples\image-2.jpg" class="hidden">
+  <img id="image3" src="C:\Users\Family\Downloads\unsamples\image-3.jpg" class="hidden">
+  <img id="image4" src="C:\Users\Family\Downloads\unsamples\image-4.jpg" class="hidden">
+  <img id="image5" src="C:\Users\Family\Downloads\unsamples\image-5.jpg" class="hidden">
+  <script>
+    document.getElementById("button1").addEventListener("click", function() {
+      var imageToDisplay = document.getElementById("image1");
+      imageToDisplay.classList.remove("hidden");
+    });
+
+    document.getElementById("button2").addEventListener("click", function() {
+      var imageToDisplay = document.getElementById("image2");
+      imageToDisplay.classList.remove("hidden");
+    });
+
+    document.getElementById("button3").addEventListener("click", function() {
+      var imageToDisplay = document.getElementById("image3");
+      imageToDisplay.classList.remove("hidden");
+    });
+
+    document.getElementById("button4").addEventListener("click", function() {
+      var imageToDisplay = document.getElementById("image4");
+      imageToDisplay.classList.remove("hidden");
+    });
+
+    document.getElementById("button5").addEventListener("click", function() {
+      var imageToDisplay = document.getElementById("image5");
+      imageToDisplay.classList.remove("hidden");
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+img {
+  width: 150px;
+ height: 100px;
+}
+
+  button {
+    background-color:aqua;
+    color: black;
+    text-align: center;
+    font-size: 30px;
+ }
+
+ .hidden {
+  display: none;
+}

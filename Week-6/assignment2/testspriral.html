@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      function getMatrix() {
+        var rows = parseInt(prompt("Enter number of rows: "));
+        var cols = parseInt(prompt("Enter number of columns: "));
+        var matrix = [];
+        for (var i = 0; i < rows; i++) {
+          var row = [];
+          for (var j = 0; j < cols; j++) {
+            row.push(parseInt(prompt("Enter element for row " + (i+1) + " and column " + (j+1))));
+          }
+          matrix.push(row);
+        }
+        var matrixDisplay = document.getElementById("matrixDisplay");
+    var html = "";
+    for (var i = 0; i < matrix.length; i++) {
+      html += "<tr>";
+      for (var j = 0; j < matrix[i].length; j++) {
+        html += "<td>" + matrix[i][j] + "</td>";
+      }
+      html += "</tr>";
+    }
+    matrixDisplay.innerHTML = html;
+    return matrix;
+  }
+
+  function displaySpiralMatrix(matrix) {
+    var result = [];
+    var rowStart = 0, rowEnd = matrix.length - 1;
+    var colStart = 0, colEnd = matrix[0].length - 1;
+
+    while (rowStart <= rowEnd && colStart <= colEnd) {
+      // Traverse Right
+      for (var i = colStart; i <= colEnd; i++) {
+        result.push(matrix[rowStart][i]);
+      }
+      rowStart++;
+
+      // Traverse Down
+      for (var i = rowStart; i <= rowEnd; i++) {
+        result.push(matrix[i][colEnd]);
+      }
+      colEnd--;
+
+      // Traverse Left
+      if (rowStart <= rowEnd) {
+        for (var i = colEnd; i >= colStart; i--) {
+          result.push(matrix[rowEnd][i]);
+        }
+        rowEnd--;
+      }
+
+      // Traverse Up
+      if (colStart <= colEnd) {
+        for (var i = rowEnd; i >= rowStart; i--) {
+          result.push(matrix[i][colStart]);
+        }
+        colStart++;
+      }
+    }
+    var resultDisplay = document.getElementById("resultDisplay");
+    resultDisplay.innerHTML = result;
+  }
+
+  function displayMessage() {
+    var matrix = getMatrix();
+    displaySpiralMatrix(matrix);
+  }
+</script>
+  </head>
+  <body>
+    <button onclick="displayMessage()">Get Matrix</button>
+    <br><br>
+    <table id="matrixDisplay"></table>
+    <br><br>
+    <div id="resultDisplay"></div>
+  </body>
+</html>
+
+
+

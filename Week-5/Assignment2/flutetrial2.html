@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .image {
+        /* display: none; */
+        height: 100px;
+        width: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="myButton">Click me</button>
+    <div id="imageContainer"></div>
+    <script>
+
+      var button = document.getElementById("myButton");
+      var imageContainer = document.getElementById("imageContainer");
+      var image = document.createElement("IMG");
+
+      image.src = "C:/Users/Family/Downloads/unsamples/image-1.jpg";
+      image.classList.add("image");
+
+      var count = 0;
+      button.addEventListener("click", function() {
+        if (count < 3) {
+          count++;
+          var newImage = image.cloneNode();
+          imageContainer.appendChild(newImage);
+        }
+      });
+
+
+    </script>
+  </body>
+</html>

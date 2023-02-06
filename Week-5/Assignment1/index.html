@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+          // let test = async () => "Async Fuction output";
+          // test().then((result) => {
+          //   console.log(result); 
+          // });
+
+          async function test2(){
+            console.log("await function output 2");
+            const response = await fetch("E:\PestoProject\p8-jainil-tejasraikar123\Week-5\Assignment1\student-json.json");
+            const students = await response.json();
+            return students;
+          }
+          console.log("await function output 1");
+          test2();
+          console.log("await function output 4");
+          console.log("await function output 5");
+          
+    
+        
+        
+        </script>
+    </head>
+</html>

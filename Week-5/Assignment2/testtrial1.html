@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+           function vowelCount(str) {
+    let vowels = new Map();
+    vowels.set(1, 0);
+    vowels.set(2, 0);
+    vowels.set(3, 0);
+    vowels.set(4, 0);
+    vowels.set(5, 0);
+    for (let i = 0; i < str.length; i++) {
+        switch (str[i].toLowerCase()) {
+            case "a":
+                vowels.set(1, vowels.get(1) + 1);
+                break;
+            case "e":
+                vowels.set(2, vowels.get(2) + 1);
+                break;
+            case "i":
+                vowels.set(3, vowels.get(3) + 1);
+                break;
+            case "o":
+                vowels.set(4, vowels.get(4) + 1);
+                break;
+            case "u":
+                vowels.set(5, vowels.get(5) + 1);
+                break;
+        }
+    }
+    return vowels;
+}
+console.log(vowelCount("hello world"));
+
+           
+          
+        
+            
+            
+        
+
+
+            </script>
+    </head>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+function doTask1(){
+console.log("task1");
+}
+
+function doTask2(){
+    console.log("task2");
+}
+
+function doTask3(){
+    console.log("task 3");
+}
+function* generateSequence() {
+  yield doTask1();
+  yield doTask2();
+  yield doTask3();
+}
+
+const iterator = generateSequence();
+iterator.next();
+iterator.next();
+iterator.next();
+
+
+
+</script>
+    </head>
+</html>
