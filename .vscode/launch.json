@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch pairWithDifference",
+            "request": "launch",
+            "mainClass": "pairWithDifference",
+            "projectName": "p8-jainil-tejasraikar123_7bc9e8a3"
+        },
+        {
+            "type": "java",
+            "name": "Launch StockMarket",
+            "request": "launch",
+            "mainClass": "StockMarket",
+            "projectName": "p8-jainil-tejasraikar123_7bc9e8a3"
+        },
+        {
+            "type": "java",
+            "name": "Launch stock",
+            "request": "launch",
+            "mainClass": "stock",
+            "projectName": "p8-jainil-tejasraikar123_7bc9e8a3"
+        },
+        {
+            "type": "java",
             "name": "Launch HelloWorld",
             "request": "launch",
             "mainClass": "HelloWorld",

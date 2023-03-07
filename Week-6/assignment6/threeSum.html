@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Find Closest Sum</title>
+  <script>
+    function findClosestSum(s, target) {
+      // Sort the array
+      s.sort((a, b) => a - b);
+
+      let closestSum = Infinity;
+
+      // Loop through the array, treating each element as the first number in the triplet
+      for (let i = 0; i < s.length - 2; i++) {
+        let left = i + 1;
+        let right = s.length - 1;
+
+        // Two-pointer technique to find the other two numbers in the triplet
+        while (left < right) {
+          let sum = s[i] + s[left] + s[right];
+
+          // Check if the sum is closer to the target than the current closest sum
+          if (Math.abs(sum - target) < Math.abs(closestSum - target)) {
+            closestSum = sum;
+          }
+
+          if (sum < target) {
+            left++;
+          } else if (sum > target) {
+            right--;
+          } else {
+            // If the sum equals the target, we can return immediately
+            return closestSum;
+          }
+        }
+      }
+
+      return closestSum;
+    }
+
+    window.onload = function() {
+      const s = [-1, 2, 1, -4,5];
+      const target = 1;
+      const closestSum = findClosestSum(s, target);
+      document.getElementById("output").innerHTML = closestSum;
+    }
+  </script>
+</head>
+<body>
+  <h1>Find Closest Sum</h1>
+  <div>The closest sum to the target is: <span id="output"></span></div>
+</body>
+</html>

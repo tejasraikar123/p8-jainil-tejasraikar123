@@ -1,0 +1,174 @@
+<html>
+  <head>
+    <style>
+      .imgContainer {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 10px;
+      }
+      .imgContainer img {
+        margin: 10px;
+      }
+
+      .button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 100px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+p{
+  font-size: 50px;
+}
+    </style>
+  </head>
+  <body>
+    <div>
+      <button class="button" id="showImage1">SA</button>
+      <button class="button"id="showImage2">RE</button>
+      <button class="button"id="showImage3">GA</button>
+      <button class="button"id="showImage4">MA</button>
+      <button class="button"id="showImage5">PA</button>
+      <button class="button"id="showImage6">DHA</button>
+      <button class="button"id="showImage7">NI</button>
+      <button class="button"id="showImage8">SA</button>
+      <button class="button"id="disappear">Disappear</button>
+      <button class="button"id="insertline">Insert a Line</button>
+      <form action="/url" method="GET">
+        <p>Enter the name of the Song </p>
+        <input style="width: 2000px;height:70px;font-size:20pt;" .....>
+    </form>
+    </div>
+    <div class="imgContainer" id="imageContainer">
+    </div>
+    <script>
+      const imageContainer = document.getElementById("imageContainer");
+
+      document.getElementById("showImage1").addEventListener("click", function() {
+        const img = document.createElement("img");
+        img.src = "file:///E:/fluteimages/SA.jpg" 
+        imageContainer.appendChild(img);
+        img.width = "1500";
+        img.height = "200";
+        
+        img.style.marginBottom = "10px";
+      });
+     
+
+                      
+
+
+
+      document.getElementById("showImage2").addEventListener("click", function() {
+        const img = document.createElement("img");
+        img.src = "file:///E:/fluteimages/RE.jpg";
+        imageContainer.appendChild(img);
+        img.width = "1500";
+        img.height = "200";
+        img.style.marginBottom = "10px";
+      });
+      
+
+      document.getElementById("showImage3").addEventListener("click", function() {
+        const img = document.createElement("img");
+        img.src = "file:///E:/fluteimages/GA.jpg";
+        imageContainer.appendChild(img);
+        img.width = "1500";
+        img.height = "200";
+        img.style.marginBottom = "10px";
+      });
+
+      
+
+      document.getElementById("showImage4").addEventListener("click", function() {
+        const img = document.createElement("img");
+        img.src = "file:///E:/fluteimages/MA.jpg";
+        imageContainer.appendChild(img);
+        img.width = "1500";
+        img.height = "200";
+        img.style.marginBottom = "10px";
+      });
+
+      
+
+      document.getElementById("showImage5").addEventListener("click", function() {
+        const img = document.createElement("img");
+        img.src = "file:///E:/fluteimages/PA.jpg";
+        imageContainer.appendChild(img);
+        img.width = "1500";
+        img.height = "200";
+        img.style.marginBottom = "10px";
+      });
+
+      
+
+
+      document.getElementById("showImage6").addEventListener("click", function() {
+        const img = document.createElement("img");
+        img.src = "file:///E:/fluteimages/DHA.jpg";
+        imageContainer.appendChild(img);
+        img.width = "1500";
+        img.height = "200";
+        img.style.marginBottom = "10px";
+      });
+
+      
+
+      document.getElementById("showImage7").addEventListener("click", function() {
+        const img = document.createElement("img");
+        img.src = "file:///E:/fluteimages/NI.jpg";
+        imageContainer.appendChild(img);
+        img.width = "1500";
+        img.height = "200";
+        img.style.marginBottom = "10px";
+      });
+
+      
+
+      document.getElementById("showImage8").addEventListener("click", function() {
+        const img = document.createElement("img");
+        img.src = "file:///E:/fluteimages/SA.jpg";
+        imageContainer.appendChild(img);
+        img.width = "1500";
+        img.height = "200";
+        img.style.marginBottom = "10px";
+      });
+
+
+
+      document.getElementById("insertline").addEventListener("click", function() {
+  const input = document.createElement("input");
+  input.style.width = "2000px";
+  input.style.height = "70px";
+  input.style.fontSize = "20pt";
+  input.style.marginBottom = "10px";
+
+  // Check if there are any images in the container
+  if (imageContainer.childNodes.length === 0) {
+    imageContainer.appendChild(input);
+  } else {
+    // Get the last child (image) in the container
+    const lastChild = imageContainer.lastChild;
+    // Insert the input element after the last child (image)
+    imageContainer.insertBefore(input, lastChild.nextSibling);
+  }
+});
+
+      imageContainer.style.display = "flex";
+imageContainer.style.flexDirection = "column";
+
+      document.getElementById("disappear").addEventListener("click", function() {
+ while (imageContainer.lastChild) { imageContainer.removeChild(imageContainer.lastChild); } }); 
+ 
+ 
+ 
+ </script>
+</body> 
+</html>
+
+
