@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rotate Linked List</title>
+	<script>
+		function rotateList() {
+			// Get input values
+			var size = document.getElementById("size").value;
+			var elements = document.getElementById("elements").value.split(" ");
+			var k = document.getElementById("k").value;
+			
+			// Create linked list
+			var list = {};
+			var curr = list;
+			for (var i = 0; i < size; i++) {
+				curr.value = elements[i];
+				if (i < size - 1) {
+					curr.next = {};
+					curr = curr.next;
+				}
+			}
+			
+			// Rotate linked list
+			for (var i = 0; i < k; i++) {
+				curr.next = list;
+				list = list.next;
+				curr = curr.next;
+				curr.next = null;
+			}
+			
+			// Display rotated linked list
+			curr = list;
+			var output = "";
+			while (curr != null) {
+				output += curr.value + " ";
+				curr = curr.next;
+			}
+			document.getElementById("result").innerHTML = output;
+		}
+	</script>
+</head>
+<body>
+	<h1>Rotate Linked List</h1>
+	<form>
+		<label for="size">Size of linked list:</label>
+		<input type="number" id="size" name="size" min="1" required><br><br>
+		
+		<label for="elements">Elements in linked list:</label>
+		<input type="text" id="elements" name="elements" required><br><br>
+		
+		<label for="k">Value of k:</label>
+		<input type="number" id="k" name="k" min="1" required><br><br>
+		
+		<button type="button" onclick="rotateList()">Rotate</button>
+	</form>
+	<br>
+	<label for="result">Rotated linked list:</label>
+	<p id="result"></p>
+</body>
+</html>

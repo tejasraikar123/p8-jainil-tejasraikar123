@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Reverse Linked List</title>
+  </head>
+  <body>
+    <h1>Reverse Linked List</h1>
+    <!-- javascript can point to the span element  -->
+    <p>Original List: <span id="original"></span></p>
+    <p>Reversed List: <span id="reversed"></span></p>
+    <script>
+      //  The data property holds the value of the 
+      //data stored in the node, 
+      //while the next property is a pointer 
+      //or reference to the next node in the list.
+      //its null because its pointing to nothing 
+      class Node {
+        constructor(data) {
+          this.data = data;
+          this.next = null;
+        }
+      }
+
+      // The head property represents the first node 
+      //in the linked list, and it is initially set to null,
+      // indicating that the list is empty.
+      class LinkedList {
+        constructor() {
+          this.head = null;
+        }
+
+        // Add a new node to the end of the linked list
+        addNode(data) {
+          let newNode = new Node(data);//this creates a 
+          //new node with data
+          if (!this.head) { //it will check if this.head 
+            //is not null becoz if its than 
+            //head points to first element
+            this.head = newNode;//now new node is the head
+          } else {
+            let current = this.head;//now current also 
+            //points to the head 
+            while (current.next) { //run until the next property 
+              //of current is null.
+              current = current.next;
+            }
+            current.next = newNode;
+          }
+        }
+
+        // Reverse the linked list
+        reverse() {//reverses the order of the elements 
+          //in an array.
+          let previous = null;//its a node to keep 
+          // track of previous node 
+          let current = this.head;//its a node 
+          //to traverse from the head to toe 
+          let next = null;//next is just a pointer 
+          //not a node it is redefined again here 
+          //it was defined in class node earlier
+          while (current) {//while will keep running
+            //till current is null
+            //curent is a node
+            next = current.next;
+            current.next = previous;
+            previous = current;
+            current = next;
+          }
+          this.head = previous;
+        }
+
+        // Print the linked list
+        printList() {
+          let current = this.head;
+          let listString = '';
+          while (current) {
+            listString += current.data + ' ';
+            current = current.next;
+          }
+          return listString;
+        }
+      }
+
+      // Create the linked list and add some nodes
+      let linkedList = new LinkedList();
+      linkedList.addNode(1);
+      linkedList.addNode(2);
+      linkedList.addNode(3);
+      linkedList.addNode(4);
+      linkedList.addNode(5);
+      linkedList.addNode(6);
+
+      // Print the original linked list
+      let originalList = linkedList.printList();
+      document.getElementById('original').textContent = originalList;
+
+      // Reverse the linked list
+      linkedList.reverse();
+
+      // Print the reversed linked list
+      let reversedList = linkedList.printList();
+      document.getElementById('reversed').textContent = reversedList;
+    </script>
+  </body>
+</html>

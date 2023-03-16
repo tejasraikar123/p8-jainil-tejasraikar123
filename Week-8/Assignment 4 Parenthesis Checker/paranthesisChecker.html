@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Parenthesis Checker</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <h1>Parenthesis Checker</h1>
+  <label for="expression">Enter expression:</label>
+  <input type="text" id="expression" name="expression">
+  <button onclick="checkExpression()">Check</button>
+  <p id="result"></p>
+
+  <script>
+    function checkExpression() {
+      const expression = document.getElementById("expression").value;
+      const stack = [];
+      const pairs = {
+        "(": ")",
+        "{": "}",
+        "[": "]"
+      };
+
+      for (let i = 0; i < expression.length; i++) {
+        const char = expression.charAt(i);
+        if (pairs[char]) {
+          // opening bracket
+          stack.push(char);
+        } else {
+          // closing bracket
+          const lastChar = stack.pop();
+          if (char !== pairs[lastChar]) {
+            document.getElementById("result").innerText = "False";
+            return;
+          }
+        }
+      }
+
+      if (stack.length === 0) {
+        document.getElementById("result").innerText = "True";
+      } else {
+        document.getElementById("result").innerText = "False";
+      }
+    }
+  </script>
+</body>
+</html>

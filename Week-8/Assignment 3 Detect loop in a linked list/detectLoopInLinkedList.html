@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Detect Loop in a Linked List</title>
+	<script>
+		function detectLoop() {
+			// Get input values
+			var size = document.getElementById("size").value;
+			var elements = document.getElementById("elements").value.split(" ");
+			var x = document.getElementById("x").value;
+			
+			// Create linked list
+			var list = {};
+			var curr = list;
+			var loopNode = null;
+			for (var i = 0; i < size; i++) {
+				curr.value = elements[i];
+				if (i == x) {
+					loopNode = curr;
+				}
+				if (i < size - 1) {
+					curr.next = {};
+					curr = curr.next;
+				}
+			}
+			if (loopNode != null) {
+				curr.next = loopNode;
+			}
+			
+			// Detect loop in linked list
+			var slow = list;
+			var fast = list;
+			while (fast != null && fast.next != null) {
+				slow = slow.next;
+				fast = fast.next.next;
+				if (slow == fast) {
+					document.getElementById("result").innerHTML = "True";
+					return;
+				}
+			}
+			document.getElementById("result").innerHTML = "False";
+		}
+	</script>
+</head>
+<body>
+	<h1>Detect Loop in a Linked List</h1>
+	<form>
+		<label for="size">Size of linked list:</label>
+		<input type="number" id="size" name="size" min="1" required><br><br>
+		
+		<label for="elements">Elements in linked list:</label>
+		<input type="text" id="elements" name="elements" required><br><br>
+		
+		<label for="x">Value of x:</label>
+		<input type="number" id="x" name="x" min="0" required><br><br>
+		
+		<button type="button" onclick="detectLoop()">Check</button>
+	</form>
+	<br>
+	<label for="result">Linked list has a loop:</label>
+	<p id="result"></p>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Next Greater Element</title>
+	<script>
+		function nextGreaterElement(arr) {
+			const result = [];
+			const stack = [];
+			for (let i = arr.length - 1; i >= 0; i--) {
+				while (stack.length > 0 && stack[stack.length - 1] <= arr[i]) {
+					stack.pop();
+				}
+				if (stack.length === 0) {
+					result.unshift(-1);
+				} else {
+					result.unshift(stack[stack.length - 1]);
+				}
+				stack.push(arr[i]);
+			}
+			return result;
+		}
+
+		function findNextGreater() {
+			const arr = document.getElementById("array").value.trim().split(" ").map(Number);
+			const result = nextGreaterElement(arr);
+			document.getElementById("result").innerHTML = "Next Greater Elements: " + result.join(" ");
+		}
+	</script>
+</head>
+<body>
+	<h2>Next Greater Element</h2>
+	<p>Enter space-separated array elements:</p>
+	<input type="text" id="array">
+	<button onclick="findNextGreater()">Find Next Greater Elements</button>
+	<p id="result"></p>
+</body>
+</html>
